@@ -1,0 +1,306 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--maincolor);
+}
+:root{
+    --maincolor: rgb(2 1 59);
+    --secondcolor: rgb(2 170 204);
+    --thirdcolor: rgb(116 187 50);
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+    z-index: -1;
+    visibility: hidden;
+    animation: nothide 19.5s;
+}
+@keyframes nothide{
+    to{
+        visibility: visible;
+    }
+}
+.container .T{
+    display: grid;
+    grid-template-columns: 50px repeat(3,50px) 50px repeat(3,50px) 50px;
+    grid-template-rows: 40px repeat(5, 50px);
+    z-index: 2;
+}
+.container .T div:first-child{
+   grid-column: 2/5;
+   background-color: #eee;
+   grid-row: 1;
+   display: flex;
+   align-items: flex-end;
+   animation: rote 1s 1s , froze 1s 2s infinite;
+}
+.container .T div:first-child div , .container .T div:nth-child(2) div{
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    animation: endo 1s 2s ;
+}
+.container .T div:first-child div{
+    background-color: var(--secondcolor); 
+    animation: movee 2s 2s, frozeball 1s 4s infinite , ball 2s 4.5s , ballF 1s 6.5s infinite;
+}
+.container .T div:nth-child(2) div{
+    background-color: var(--thirdcolor);
+    animation: movee2 2s 2s , frozeball2 1s 4s infinite , ball 2s 4.5s , ballF 1s 6.5s infinite;
+}
+.container .T div:nth-child(2){
+    grid-column: 6/9;
+    background-color: #eee;
+    grid-row: 1;
+    display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+   animation: _rote 1s 1s , froze2 1s 2s infinite;
+ }
+ .container .T div:last-child{
+     grid-column: 5;
+     grid-row: 1/6;
+     background-color: #eee;
+     animation: fit 2s 1s , fixeed 1s 3s infinite;
+     display: flex;
+     flex-direction: row;
+ }
+.container .H{
+    display: grid;
+    grid-template-rows: repeat(5,40px);
+    grid-template-columns: repeat(3,60px);
+    margin-top: -60px;
+    z-index: 3;
+    perspective: 300px;
+}
+.container .H div:first-child{
+    grid-row: 1/6;
+    grid-column: 1;
+    background-color: #eee;
+    align-items: flex-end;
+}
+.container .H div:nth-child(2){
+    grid-row: 3;
+    grid-column: 2;
+    background-color: #eee;
+}
+.container .H div:last-child{
+    grid-row: 1/6;
+    grid-column: 3;
+    background-color: #eee;
+}
+
+@keyframes rote{
+    to{
+        transform-origin: top right;
+        transform: rotate(30deg);
+    }
+}
+@keyframes _rote{
+    to{
+        transform-origin: top left;
+        transform: rotate(-30deg);
+    }
+}
+@keyframes froze2{
+    from{
+        transform-origin: top left;
+        transform: rotate(-30deg);
+
+    }
+    to{
+        transform-origin: top left;
+        transform: rotate(-30deg);
+    }
+}
+@keyframes froze{
+    from{
+        transform-origin: top right;
+        transform: rotate(30deg);
+    }
+    to{
+        transform-origin: top right;
+        transform: rotate(30deg);
+    }
+}
+@keyframes endo{
+    to{
+        align-self: flex-end;
+    }
+}
+@keyframes fit{
+    to{
+        transform: translateY(33px) scaleX(1.8);
+    }
+}
+@keyframes fixeed{
+    from{
+        transform: translateY(33px) scaleX(1.8);
+    }
+    to{
+        transform: translateY(33px) scaleX(1.8);
+    }
+}
+@keyframes movee{
+    to{
+        transform: translateX(120px);
+    }
+}
+@keyframes frozeball{
+    from{
+        transform: translateX(120px);
+    }
+    to{
+        transform: translateX(120px);
+    }
+}
+@keyframes movee2{
+    to{
+        transform: translateX(-120px);
+    }
+}
+@keyframes frozeball2{
+    from{
+        transform: translateX(-120px);
+    }
+    to{
+        transform: translateX(-120px);
+    }
+}
+@keyframes ball{
+    10%{
+        opacity: .9;
+    }20%{
+        opacity: .8;
+    }30%{
+        opacity: .7;
+    }40%{
+        opacity: .6;
+    }50%{
+        opacity: .5;
+    }60%{
+        opacity: .4;
+    } 70%{
+        opacity: .3;
+    } 80%{
+        opacity: .2;
+    }90%{
+        opacity: .1;
+    }100%{
+        opacity: 0;
+    }
+}
+@keyframes ballF{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@keyframes fix{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes shown{
+    from{
+        opacity: 0;
+    }
+    10%{
+        opacity: .1;
+    }20%{
+        opacity: .2;
+    }30%{
+        opacity: .3;
+    }40%{
+        opacity: .4;
+    }50%{
+        opacity: .5;
+    }60%{
+        opacity: .6;
+    } 70%{
+        opacity: .7;
+    } 80%{
+        opacity: .8;
+    }90%{
+        opacity: .9;
+    }100%{
+        opacity: 1;
+    }
+}
+@keyframes moving{
+    50%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(200px);
+    }
+}
+@keyframes downball{
+    from{
+        transform: translateY(200px);
+    }
+    to{
+        transform: translateY(200px);
+    }
+}
+.container .T div:last-child div{
+    width: 30px;
+    height:30px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    animation: fix 1s infinite;
+    animation: ballF 6.5s  , shown 1s 6.5s , moving 2s 7.5s linear , downball 1s 9.5s infinite ;
+}
+.container .T div:last-child div:first-child{
+    background-color: var(--secondcolor);
+}
+.container .T div:last-child div:last-child{
+    background-color: var(--thirdcolor);
+}
+@keyframes backcolor{
+    from{
+        background-color: #eee;
+    }20%{
+        opacity: .2;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }40%{
+        opacity: .4;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }60%{
+        opacity: .6;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }80%{
+        opacity: .8;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }100%{
+        opacity: 1;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }
+}
+@keyframes fixcolor{
+    from{
+        opacity: 1;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }
+    to{
+        opacity: 1;
+        background-image: linear-gradient(to right , rgb(2 170 204) , rgb(116 187 50));
+    }
+}
+@keyframes finish{
+   to{
+    transform: translateZ(300px);
+   }
+}
+.container .H div{
+    animation: backcolor 2s 10.5s linear 3, fixcolor 1s 16.5s infinite , finish 2.5s 17s;
+
+}
